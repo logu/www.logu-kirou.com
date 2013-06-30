@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href='http://fonts.googleapis.com/css?family=Tauri' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="css/style.css" />
+<link rel="stylesheet" href="libs/jpreloader/jpreloader.css" />
+<link rel="stylesheet" href="libs/bootstrap/css/bootstrap.css" />
+<script src="libs/jquery/jquery.js"></script>
+<script src="libs/jpreloader/jpreLoader.js"></script>
+<!--[if lt IE 9]>
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<script>
+$(document).ready(function() {
+	$('#wrapper').hide();
+	$('header').css("top",-90);
+	$('footer').css("bottom",-25);
+	
+});
+</script>
+</head>
+
+<body>
+<header>
+	<div>
+		<hgroup class="container">
+			<img src="images/logo.png">
+			<nav class="pull-right">
+				<ul class="nav nav-pills">
+					<li class="active"><a href="/">Home</a></li>
+					<li><a href="/portfolio.html">Portfolio</a></li>
+					<li><a href="/contacthtml">Contact</a></li>
+				</ul>
+			</nav>
+		</hgroup>
+		<div class=clearfix></div>
+	</div>	
+</header>
+<div id="wrapper">
+	<section id="Intro" class="Intro">
+		<div class="container">
+			<ul id="img-p" class="holder current">
+				<li><img src="http://fakeimg.pl/350x200/?text=Lorem ipsum"></li>
+				<li><img src="http://fakeimg.pl/350x200/?text=Suspendisse "></li>
+				<li><img src="http://fakeimg.pl/350x200/?text=Vivamus "></li>
+				<li><img src="http://fakeimg.pl/350x200/?text=ullamcorper "></li>
+				<li><img src="http://fakeimg.pl/350x200/?text=non "> </li>
+				<li><img src="http://fakeimg.pl/350x200/?text=adipiscing "></li>
+				<li><img src="http://fakeimg.pl/350x200/?text=aliquam"></li>
+				<li><img src="http://fakeimg.pl/350x200/?text=gravida "></li>
+				<li><img src="http://fakeimg.pl/350x200/?text=adipiscing "></li>
+				<div class=clearfix></div>
+			</ul>
+		</div>
+	</section>
+		<section id="Serment" class="Serment">
+		<div class="container">
+			<div class="row-fluid">
+				<div class="span8"></div>
+
+			</div>
+			<ul id="img-p" class="holder current">
+				<li><img src="http://fakeimg.pl/500x250/?text=sdsdwf"></li>
+				<li><img src="http://fakeimg.pl/500x250/?text=sddsgs "></li>
+				<li><img src="http://fakeimg.pl/500x250/?text=fgfg "></li>
+				<li><img src="http://fakeimg.pl/500x250/?text=fgfgh "></li>
+				<li><img src="http://fakeimg.pl/500x250/?text=non "> </li>
+				<li><img src="http://fakeimg.pl/500x250/?text=adipiscing "></li>
+				<li><img src="http://fakeimg.pl/500x250/?text=aliquam"></li>
+				<li><img src="http://fakeimg.pl/500x250/?text=gravida "></li>
+				<li><img src="http://fakeimg.pl/500x250/?text=adipiscing "></li>
+				<div class=clearfix></div>
+			</ul>
+		</div>
+	</section>
+</div>
+<!-- This section is for Splash Screen -->
+<div id="jSplash">
+	<section>
+		&nbsp;
+	</section>
+</div>
+<!-- End of Splash Screen -->
+<footer>
+	
+</footer>
+
+
+<script>
+<!-- jPreLoader script -->
+$(document).ready(function() {
+	var timer;
+	
+	//calling jPreLoader function with properties
+	$('body').jpreLoader({
+		splashID: "#jSplash",
+		onetimeLoad: true,
+		loaderVPos: "40%",
+		splashFunction: function() {  //passing Splash Screen script to jPreLoader
+
+		}
+	}, function() {	//jPreLoader callback function
+		clearInterval(timer);
+		$('footer').animate({"bottom":0}, 500);
+		$('header').animate({"top":0}, 800, function() {
+			$('#wrapper').fadeIn(800);
+		});
+	});
+});
+<!-- End of jPreLoader script -->
+
+function splashRotator(){
+
+}
+/* 
+* Function to animate leaving a page
+*/
+$.fn.leavePage = function() { 	
+  	
+	this.click(function(event){
+
+		// Don't go to the next page yet.
+		event.preventDefault();
+		linkLocation = this.href;
+		
+		// Fade out this page first.
+		$('body').fadeOut(500, function(){
+			
+			// Then go to the next page.
+			window.location = linkLocation;
+		});      
+	}); 
+};
+
+
+/* 
+* Call the leavePage function upon link clicks with the "transition" class
+*/
+$('.transition').leavePage();
+</script>
+
+</body>
+</html>

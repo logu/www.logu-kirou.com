@@ -1,0 +1,35 @@
+#jpreOverlay {
+	background:url(../../css/img/common/bg_preload.png) repeat;
+}
+#jpreSlide{
+	font-size:22px;
+	font-weight:bold;
+	color:#ccc;
+	text-align:center;
+	width:50%;
+	height:30%;
+}
+#jpreLoader{
+	background: url(../../css/img/common/bg-loaded.png) no-repeat transparent;
+	width:200px;
+	height:200px;
+	border-radius:100px;
+	-moz-border-radius:100px;
+	-webkit-border-radius:100px;
+}
+
+#jpreBar {
+	background:url(../../css/img/common/bg_preload.png) transparent;
+	border-radius:100px;
+	-moz-border-radius:100px;
+	-webkit-border-radius:100px;
+}
+
+#jprePercentage {
+	color:#ccc;
+	font-family:"Trebuchet MS",Arial,Helvetica,sans-serif;
+	font-weight:bold;
+	text-align:center;
+	text-shadow:1px 1px 1px #333;
+	top:-60%;
+}
