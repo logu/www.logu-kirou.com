@@ -2,21 +2,25 @@
 <html>
 <head>
 <link href='http://fonts.googleapis.com/css?family=Tauri' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="libs/font-awesome/css/font-awesome.css" />
 <link rel="stylesheet" href="css/style.css" />
 <link rel="stylesheet" href="libs/jpreloader/jpreloader.css" />
 <link rel="stylesheet" href="libs/bootstrap/css/bootstrap.css" />
-<script src="libs/jquery/jquery.js"></script>
-<script src="libs/jpreloader/jpreLoader.js"></script>
+
+<script type="text/javascript" src="libs/modernizr/modernizr.js"></script>
+<script type="text/javascript" src="libs/jquery/jquery.js"></script>
+<script type="text/javascript" src="libs/jpreloader/jpreLoader.js"></script>
+
 <!--[if lt IE 9]>
 <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
 <script>
-$(document).ready(function() {
-	$('#wrapper').hide();
-	$('header').css("top",-90);
-	$('footer').css("bottom",-25);
-	
-});
+	$(document).ready(function() {
+		$('#wrapper').hide();
+		$('header').css("top",-90);
+		$('footer').css("bottom",-25);
+		
+	});
 </script>
 </head>
 
@@ -37,42 +41,42 @@ $(document).ready(function() {
 	</div>	
 </header>
 <div id="wrapper">
-	<section id="Intro" class="Intro">
-		<div class="container">
-			<ul id="img-p" class="holder current">
-				<li><img src="http://fakeimg.pl/350x200/?text=Lorem ipsum"></li>
-				<li><img src="http://fakeimg.pl/350x200/?text=Suspendisse "></li>
-				<li><img src="http://fakeimg.pl/350x200/?text=Vivamus "></li>
-				<li><img src="http://fakeimg.pl/350x200/?text=ullamcorper "></li>
-				<li><img src="http://fakeimg.pl/350x200/?text=non "> </li>
-				<li><img src="http://fakeimg.pl/350x200/?text=adipiscing "></li>
-				<li><img src="http://fakeimg.pl/350x200/?text=aliquam"></li>
-				<li><img src="http://fakeimg.pl/350x200/?text=gravida "></li>
-				<li><img src="http://fakeimg.pl/350x200/?text=adipiscing "></li>
-				<div class=clearfix></div>
-			</ul>
-		</div>
-	</section>
-		<section id="Serment" class="Serment">
-		<div class="container">
-			<div class="row-fluid">
-				<div class="span8"></div>
+	<div id="cbp-fbscroller" class="cbp-fbscroller">
+		<nav class="interne">
+			<a href="#Intro"></a>
+			<a href="#Serment"></a>
+		</nav>
+		<section id="Intro" class="Intro">
+			<div class="container">
+				<div class="textHolder">
+					<h2>
+						LOGU KIROU
+						<small>FRONT-END DEVELOPPER</small>
+					</h2>
+				</div>
+				<div class="brain">
+					<ul class="leftSide">
+						<li></li>
+					</ul>
+					<ul class="rightSide">
+						<li></li>
+					</ul>
+				</div>
+				<div class="LeftImageContainer"></div>
+				<div class="RightImageContainer"></div>
 
 			</div>
-			<ul id="img-p" class="holder current">
-				<li><img src="http://fakeimg.pl/500x250/?text=sdsdwf"></li>
-				<li><img src="http://fakeimg.pl/500x250/?text=sddsgs "></li>
-				<li><img src="http://fakeimg.pl/500x250/?text=fgfg "></li>
-				<li><img src="http://fakeimg.pl/500x250/?text=fgfgh "></li>
-				<li><img src="http://fakeimg.pl/500x250/?text=non "> </li>
-				<li><img src="http://fakeimg.pl/500x250/?text=adipiscing "></li>
-				<li><img src="http://fakeimg.pl/500x250/?text=aliquam"></li>
-				<li><img src="http://fakeimg.pl/500x250/?text=gravida "></li>
-				<li><img src="http://fakeimg.pl/500x250/?text=adipiscing "></li>
-				<div class=clearfix></div>
-			</ul>
-		</div>
-	</section>
+		</section>
+		<section id="Serment" class="Serment">
+			<div class="container">
+				<div class="row-fluid">
+					<div class="span8"></div>
+
+				</div>
+			</div>
+		</section>
+	</div>
+
 </div>
 <!-- This section is for Splash Screen -->
 <div id="jSplash">
@@ -85,12 +89,17 @@ $(document).ready(function() {
 	
 </footer>
 
+<script type="text/javascript" src="libs/jquery/plugins/jquery-easing.js"></script>
+<script type="text/javascript" src="libs/waypoints/waypoints.js"></script>
+<script type="text/javascript" src="libs/jquery/plugins/jquery-debouncedresize.js"></script>
+<script type="text/javascript" src="js/cbpFixedScrollLayout.js"></script>
 
 <script>
 <!-- jPreLoader script -->
 $(document).ready(function() {
 	var timer;
-	
+	// Layout 
+	cbpFixedScrollLayout.init();
 	//calling jPreLoader function with properties
 	$('body').jpreLoader({
 		splashID: "#jSplash",
@@ -101,10 +110,20 @@ $(document).ready(function() {
 		}
 	}, function() {	//jPreLoader callback function
 		clearInterval(timer);
-		$('footer').animate({"bottom":0}, 500);
+		//$('footer').animate({"bottom":0}, 500);
 		$('header').animate({"top":0}, 800, function() {
 			$('#wrapper').fadeIn(800);
+			$('.brain').animate({
+				"top":0
+			},1500);
+			$('.LeftImageContainer').animate({
+				"left":0
+			},1500);
+			$('.RightImageContainer').animate({
+				"right":0
+			},2000);			
 		});
+
 	});
 });
 <!-- End of jPreLoader script -->

@@ -1,5 +1,5 @@
 #jpreOverlay {
-	background:url(../../css/img/common/bg_preload.png) repeat;
+	background:url(../../css/img/common/bg_preload.png) repeat #000000;
 }
 #jpreSlide{
 	font-size:22px;
