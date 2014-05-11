@@ -1,11 +1,21 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
+<meta charset='utf-8'> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <link href='http://fonts.googleapis.com/css?family=Tauri' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,300,100,700' rel='stylesheet' type='text/css'>
+
+<link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.css" />
+<link rel="stylesheet" href="libs/bootstrap-bigmodal/css/bigmodals.css" />
 <link rel="stylesheet" href="libs/font-awesome/css/font-awesome.css" />
-<link rel="stylesheet" href="css/style.css" />
 <link rel="stylesheet" href="libs/jpreloader/jpreloader.css" />
-<link rel="stylesheet" href="libs/bootstrap/css/bootstrap.css" />
+<link rel="stylesheet" href="libs/animate/animate.css" />
+<link rel="stylesheet" href="libs/jPages/css/jPages.css">
+<link rel="stylesheet" href="libs/jPages/css/animate.css">
+<link rel="stylesheet" href="css/portfolio.css" />
+<link rel="stylesheet" href="css/style.css" />
 
 <script type="text/javascript" src="libs/modernizr/modernizr.js"></script>
 <script type="text/javascript" src="libs/jquery/jquery.js"></script>
@@ -15,6 +25,24 @@
 <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
 <script>
+		// Mobile detection
+		// media query event handler
+		if (matchMedia) {
+			var mq = window.matchMedia("(min-width: 1205px)");
+			mq.addListener(WidthChange);
+			WidthChange(mq);
+		}
+
+		// media query change
+		function WidthChange(mq) {
+			if (!mq.matches) {
+				console.log("break");
+				// similar behavior as an HTTP redirect
+
+				window.location.replace("http://logu-kirou.com");
+			}
+		}
+
 	$(document).ready(function() {
 		$('#wrapper').hide();
 		$('header').css("top",-90);
@@ -25,7 +53,7 @@
 </head>
 
 <body>
-<header>
+<!-- <header id="Head">
 	<div>
 		<hgroup class="container">
 			<img src="images/logo.png">
@@ -39,18 +67,23 @@
 		</hgroup>
 		<div class=clearfix></div>
 	</div>	
-</header>
+</header> -->
 <div id="wrapper">
 	<div id="cbp-fbscroller" class="cbp-fbscroller">
-		<nav class="interne">
-			<a href="#Intro"></a>
-			<a href="#Serment"></a>
+		<div class="goTotop">
+			<img src="images/icons/Logo.png" alt="L">
+		</div>
+		<nav class="interne">			
+			<a href="#Intro" class="GoToIntro trigger active"><img src="images/icons/Accueil.png" alt="A"></a>
+			<a href="#Serment" class="GoToSerment trigger"><img src="images/icons/Serment.png" alt="S"></a>
+			<a href="#Portfolio" class="GoToPortfolio trigger"><img src="images/icons/Portfolio.png" alt="P"></a>
+			<a href="#TimeLine" class="GoToTimeLine trigger"><img src="images/icons/TimeLine.png" alt="P"></a>			
 		</nav>
-		<section id="Intro" class="Intro">
-			<div class="container">
+		<section id="Intro" class="Intro cbp-fbcurrent">
+			<div class="container" style="position: relative;">
 				<div class="textHolder">
 					<h2>
-						LOGU KIROU
+						LOGU&nbsp;&nbsp;KIROU
 						<small>FRONT-END DEVELOPPER</small>
 					</h2>
 				</div>
@@ -62,21 +95,397 @@
 						<li></li>
 					</ul>
 				</div>
+				<div class="competance">
+
+				</div>
 				<div class="LeftImageContainer"></div>
 				<div class="RightImageContainer"></div>
-
 			</div>
 		</section>
 		<section id="Serment" class="Serment">
+			<div class="slidingColor">
+			</div>
 			<div class="container">
-				<div class="row-fluid">
-					<div class="span8"></div>
+				<div class="row">
+					<div class="col-md-6" style="position: relative;">
+						<div class="oldPaper">							
+						</div>						
+						<div class="poster">
+							<div class="posterContent">
+								<div class="sun">
+								</div>
+								<div class="decoration"></div>
+								<div class="fist">
+
+								</div>
+								<div class="clouds">
+									<div class="cloudContent">
+										
+										<div class="element-5 elements slideInRight "></div>
+										<div class="element-6 elements slideInRight"></div>
+										<div class="element-7 elements slideInLeft"></div>
+										<div class="element-5 elements slideInRight "></div>
+										<div class="element-4 elements slideInLeft"></div>
+										<div class="element-3 elements slideInLeft"></div>
+										<div class="element-2 elements slideInRight"></div>
+										<div class="element-1 elements slideInLeft"></div>
+									</div>									
+								</div>
+								<div class="wave scene">
+									<div class="layer element-9" data-depth="0.10"></div>
+									<div class="layer element-8" data-depth="0.10"></div>
+									<div class="layer element-4" data-depth="0.20"></div>
+									<div class="layer element-3" data-depth="0.15"></div>
+									<div class="layer element-2" data-depth="0.20"></div>
+									<div class="layer element-1" data-depth="0.45"></div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+					<div class="col-md-6 sermentText">
+						<header>
+						<h2>Mon serment</h2></header>
+						<p class="text">
+							Je jure par Athéna, maîtresse des sciences, par Zeus, seigneur de la foudre et par Apollon, dieu des Arts, par tous les dieux et toutes les déesses, que je remplirai, suivant mes forces et ma capacité, le serment et les engagements suivants : J’utiliserai le HTML5 comme ma langue maternelle, Je vénérerai pieusement CSS3, Je me vouerai corps et âme au Javascript, Je dirigerai l'expérience utilisateur à son avantage, je ne discriminerai aucun navigateur, dans quelque maison que je rentre, j’y entrerai pour l’utilité de l’internaute.
+							Si je remplis ce serment sans l’enfreindre, qu’il me soit donné de jouir heureusement de la vie et de ma profession.
+						</p>
+						<footer>Logu</footer>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section id="Portfolio" class="Portfolio">
+			<div class="slidingColor">
+			</div>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12 portfolioText">
+						<header>
+						<h2>Portfolio</h2></header>
+						<!-- Portfolio Sorting Blocks -->
+						<div class="sorting-block folio">
+						    <ul class="sorting-nav sorting-nav-v1">
+						        <li class="filter" data-filter="all">Tous</li>
+						        <li class="filter active" data-filter=".category_1">Responsive</li>
+						        <li class="filter" data-filter=".category_2">UI design</li>
+						        <li class="filter" data-filter=".category_3">HTML5/CSS3</li>
+						        <li class="filter" data-filter=".category_4">Bootstrap 3</li>
+						    </ul>
+						    <div class="pagination"></div>
+							<div class="projects">
+						    	<ul id="portfolio-grid" class="row sorting-grid og-grid ">
+
+						            <li class="mix category_1 category_3" data-my-order="1">
+						            	<article class="entry ">
+						              <a>
+						                <aside>
+						                  <strong>Syntec</strong>
+						                  <span>
+											<i class="fa fa-map-marker"></i> Makoa </br>
+											<i class="fa fa-road"></i> En ligne </br>
+						                  <span>
+						                </aside>
+						                <img src="images/portfolio/thumbnail/syntec.png"/>
+						                <span class="info">
+							                <i class="fa fa-link"></i>
+							                <i class="fa fa-info"></i>
+						            	</span>
+						              </a>
+						              <ul>
+						                <li style="background-color:#e77e64"></li>
+						                <li style="background-color:#228b9b"></li>
+						                <li style="background-color:#99ceba"></li>
+						              </ul>
+						            	</article>
+						            </li>
+			                        <li class="mix category_3 category_1" data-my-order="2">
+			                        	<article class="entry">
+			                          <a>
+			                            <aside>
+			                              <strong>AFM</strong>
+			                              <span>
+			            					<i class="fa fa-map-marker"></i> Makoa </br>
+			            					<i class="fa fa-road"></i> En ligne </br>
+
+			                              <span>
+			                            </aside>
+			                            <img src="images/portfolio/thumbnail/afm.png"/>
+			                            <span class="info">
+			            	                <i class="fa fa-link"></i>
+			            	                <i class="fa fa-info"></i>
+			                        	</span>
+			                          </a>
+			                          <ul>
+			                            <li style="background-color:#e77e64"></li>
+			                            <li style="background-color:#228b9b"></li>
+			                          </ul>
+			                        	</article>
+			                        </li>
+			                        <li class="mix category_2 category_1" data-my-order="3">
+			                        	<article class="entry">
+			                          <a>
+			                            <aside>
+			                              <strong>AXEMA</strong>
+			                              <span>
+			            					<i class="fa fa-map-marker"></i> Makoa </br>
+			            					<i class="fa fa-road"></i> En ligne </br>
+
+			                              <span>
+			                            </aside>
+			                            <img src="images/portfolio/thumbnail/axema.png"/>
+			                            <span class="info">
+			            	                <i class="fa fa-link"></i>
+			            	                <i class="fa fa-info"></i>
+			                        	</span>
+			                          </a>
+			                          <ul>
+			                            <li style="background-color:#e77e64"></li>
+			                            <li style="background-color:#228b9b"></li>
+			                          </ul>
+			                        	</article>
+			                        </li>
+			                        <li class="mix category_3 category_4" data-my-order="4">
+			                        	<article class="entry">
+			                          <a>
+			                            <aside>
+			                              <strong>FHP</strong>
+			                              <span>
+			            					<i class="fa fa-map-marker"></i> Makoa </br>
+			            					<i class="fa fa-road"></i> En ligne </br>
+
+			                              <span>
+			                            </aside>
+			                            <img src="images/portfolio/thumbnail/fhp.png"/>
+			                            <span class="info">
+			            	                <i class="fa fa-link"></i>
+			            	                <i class="fa fa-info"></i>
+			                        	</span>
+			                          </a>
+			                          <ul>
+			                            <li style="background-color:#e77e64"></li>
+			                            <li style="background-color:#228b9b"></li>
+			                          </ul>
+			                        	</article>
+			                        </li>
+			        	            <li class="mix category_2 category_1 category_4" data-my-order="5">
+			        	            	<article class="entry">
+			        	              <a>
+			        	                <aside>
+			        	                  <strong>UPJ</strong>
+			        	                  <span>
+			        						<i class="fa fa-map-marker"></i> Makoa </br>
+			        						<i class="fa fa-road"></i> En ligne </br>
+
+			        	                  <span>
+			        	                </aside>
+			        	                <img src="images/portfolio/thumbnail/upj.png"/>
+			        	                <span class="info">
+			        		                <i class="fa fa-link"></i>
+			        		                <i class="fa fa-info"></i>
+			        	            	</span>
+			        	              </a>
+			        	              <ul>
+			        	                <li style="background-color:#e77e64"></li>
+			        	                <li style="background-color:#228b9b"></li>
+			        	              </ul>
+			        	            	</article>
+			        	            </li>
+			        	            <li class="mix category_4" data-my-order="6">
+			        	            	<article class="entry">
+			        	              <a>
+			        	                <aside>
+			        	                  <strong>DLR</strong>
+			        	                  <span>
+			        						<i class="fa fa-map-marker"></i> Makoa </br>
+			        						<i class="fa fa-road"></i> En ligne </br>
+
+			        	                  <span>
+			        	                </aside>
+			        	                <img src="images/portfolio/thumbnail/dlr.png"/>
+			        	                <span class="info">
+			        		                <i class="fa fa-link"></i>
+			        		                <i class="fa fa-info"></i>
+			        	            	</span>
+			        	              </a>
+			        	              <ul>
+			        	                <li style="background-color:#e77e64"></li>
+			        	                <li style="background-color:#228b9b"></li>
+			        	              </ul>
+			        	            	</article>
+			        	            </li>
+			        	                                    <li class="mix category_2 category_1" data-my-order="3">
+			        	                                    	<article class="entry">
+			        	                                      <a>
+			        	                                        <aside>
+			        	                                          <strong>AXEMA</strong>
+			        	                                          <span>
+			        	                        					<i class="fa fa-map-marker"></i> Makoa </br>
+			        	                        					<i class="fa fa-road"></i> En ligne </br>
+
+			        	                                          <span>
+			        	                                        </aside>
+			        	                                        <img src="images/portfolio/thumbnail/axema.png"/>
+			        	                                        <span class="info">
+			        	                        	                <i class="fa fa-link"></i>
+			        	                        	                <i class="fa fa-info"></i>
+			        	                                    	</span>
+			        	                                      </a>
+			        	                                      <ul>
+			        	                                        <li style="background-color:#e77e64"></li>
+			        	                                        <li style="background-color:#228b9b"></li>
+			        	                                      </ul>
+			        	                                    	</article>
+			        	                                    </li>	
+			        	                    	            <li class="mix category_4" data-my-order="6">
+			        	                    	            	<article class="entry">
+			        	                    	              <a>
+			        	                    	                <aside>
+			        	                    	                  <strong>DLR</strong>
+			        	                    	                  <span>
+			        	                    						<i class="fa fa-map-marker"></i> Makoa </br>
+			        	                    						<i class="fa fa-road"></i> En ligne </br>
+
+			        	                    	                  <span>
+			        	                    	                </aside>
+			        	                    	                <img src="images/portfolio/thumbnail/dlr.png"/>
+			        	                    	                <span class="info">
+			        	                    		                <i class="fa fa-link"></i>
+			        	                    		                <i class="fa fa-info"></i>
+			        	                    	            	</span>
+			        	                    	              </a>
+			        	                    	              <ul>
+			        	                    	                <li style="background-color:#e77e64"></li>
+			        	                    	                <li style="background-color:#228b9b"></li>
+			        	                    	              </ul>
+			        	                    	            	</article>
+			        	                    	            </li>			        	                                    		        	            
+			        	            			            <li class="mix category_1 category_3" data-my-order="1">
+			        	            			            	<article class="entry ">
+			        	            			              <a>
+			        	            			                <aside>
+			        	            			                  <strong>Syntec</strong>
+			        	            			                  <span>
+			        	            								<i class="fa fa-map-marker"></i> Makoa </br>
+			        	            								<i class="fa fa-road"></i> En ligne </br>
+			        	            			                  <span>
+			        	            			                </aside>
+			        	            			                <img src="images/portfolio/thumbnail/syntec.png"/>
+			        	            			                <span class="info">
+			        	            				                <i class="fa fa-link"></i>
+			        	            				                <i class="fa fa-info"></i>
+			        	            			            	</span>
+			        	            			              </a>
+			        	            			              <ul>
+			        	            			                <li style="background-color:#e77e64"></li>
+			        	            			                <li style="background-color:#228b9b"></li>
+			        	            			                <li style="background-color:#99ceba"></li>
+			        	            			              </ul>
+			        	            			            	</article>
+			        	            			            </li>
+			        	                                    <li class="mix category_3 category_1" data-my-order="2">
+			        	                                    	<article class="entry">
+			        	                                      <a>
+			        	                                        <aside>
+			        	                                          <strong>AFM</strong>
+			        	                                          <span>
+			        	                        					<i class="fa fa-map-marker"></i> Makoa </br>
+			        	                        					<i class="fa fa-road"></i> En ligne </br>
+
+			        	                                          <span>
+			        	                                        </aside>
+			        	                                        <img src="images/portfolio/thumbnail/afm.png"/>
+			        	                                        <span class="info">
+			        	                        	                <i class="fa fa-link"></i>
+			        	                        	                <i class="fa fa-info"></i>
+			        	                                    	</span>
+			        	                                      </a>
+			        	                                      <ul>
+			        	                                        <li style="background-color:#e77e64"></li>
+			        	                                        <li style="background-color:#228b9b"></li>
+			        	                                      </ul>
+			        	                                    	</article>
+			        	                                    </li>
+
+			        	                                    <li class="mix category_3 category_4" data-my-order="4">
+			        	                                    	<article class="entry">
+			        	                                      <a>
+			        	                                        <aside>
+			        	                                          <strong>FHP</strong>
+			        	                                          <span>
+			        	                        					<i class="fa fa-map-marker"></i> Makoa </br>
+			        	                        					<i class="fa fa-road"></i> En ligne </br>
+
+			        	                                          <span>
+			        	                                        </aside>
+			        	                                        <img src="images/portfolio/thumbnail/fhp.png"/>
+			        	                                        <span class="info">
+			        	                        	                <i class="fa fa-link"></i>
+			        	                        	                <i class="fa fa-info"></i>
+			        	                                    	</span>
+			        	                                      </a>
+			        	                                      <ul>
+			        	                                        <li style="background-color:#e77e64"></li>
+			        	                                        <li style="background-color:#228b9b"></li>
+			        	                                      </ul>
+			        	                                    	</article>
+			        	                                    </li>
+			        	                    	            <li class="mix category_2 category_1 category_4" data-my-order="5">
+			        	                    	            	<article class="entry">
+			        	                    	              <a>
+			        	                    	                <aside>
+			        	                    	                  <strong>UPJ</strong>
+			        	                    	                  <span>
+			        	                    						<i class="fa fa-map-marker"></i> Makoa </br>
+			        	                    						<i class="fa fa-road"></i> En ligne </br>
+
+			        	                    	                  <span>
+			        	                    	                </aside>
+			        	                    	                <img src="images/portfolio/thumbnail/upj.png"/>
+			        	                    	                <span class="info">
+			        	                    		                <i class="fa fa-link"></i>
+			        	                    		                <i class="fa fa-info"></i>
+			        	                    	            	</span>
+			        	                    	              </a>
+			        	                    	              <ul>
+			        	                    	                <li style="background-color:#e77e64"></li>
+			        	                    	                <li style="background-color:#228b9b"></li>
+			        	                    	              </ul>
+			        	                    	            	</article>
+			        	                    	            </li>
+
+			        	       	</ul>
+							</div>						
+						    <div class="clearfix"></div>
+						</div>
+						<!-- End Portfolio Sorting Blocks -->						
+					</div>
+					<!--					
+					<div class="col-md-4" style="position: relative;">
+					</div>-->
+				</div>
+				<div class="folio">
 
 				</div>
 			</div>
 		</section>
+		<section id="TimeLine" class="TimeLine">
+			<div class="slidingColor">
+			</div>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12 TimeLineText">
+						<header>
+						<h2>Time line</h2></header>						
+					</div>
+				</div>
+			</div>
+		</section>		
 	</div>
 
+</div>
+<div class="arrow animated bounce">
+  <i class="icon-chevron-down icon-4x"></i> 
 </div>
 <!-- This section is for Splash Screen -->
 <div id="jSplash">
@@ -89,73 +498,92 @@
 	
 </footer>
 
+<script type="text/javascript" src="libs/bootstrap/dist/js/bootstrap.js"></script>
+<script type="text/javascript" src="libs/bootstrap-bigmodal/js/bootstrap-bigmodal.js"></script>
 <script type="text/javascript" src="libs/jquery/plugins/jquery-easing.js"></script>
 <script type="text/javascript" src="libs/waypoints/waypoints.js"></script>
 <script type="text/javascript" src="libs/jquery/plugins/jquery-debouncedresize.js"></script>
+<!-- <script type="text/javascript" src="libs/jquery/plugins/mixitup/jquery.mixitup.min.js"></script> -->
+<script type="text/javascript" src="libs/mixitup/build/jquery.mixitup.min.js"></script>
+<script type="text/javascript" src="libs/mixitup/debug/src/jquery.mixitup-debug.js"></script>
+<script type="text/javascript" src="libs/jPages/js/jPages.js"></script>
+<script type="text/javascript" src="libs/parallax/deploy/jquery.parallax.js"></script>
+
 <script type="text/javascript" src="js/cbpFixedScrollLayout.js"></script>
+<script type="text/javascript" src="js/portfolio.js"></script>
 
 <script>
 <!-- jPreLoader script -->
 $(document).ready(function() {
-	var timer;
-	// Layout 
-	cbpFixedScrollLayout.init();
+	var timer,
+	$startSection = $('.Intro');
 	//calling jPreLoader function with properties
 	$('body').jpreLoader({
 		splashID: "#jSplash",
 		onetimeLoad: true,
 		loaderVPos: "40%",
 		splashFunction: function() {  //passing Splash Screen script to jPreLoader
-
+		
 		}
 	}, function() {	//jPreLoader callback function
 		clearInterval(timer);
+
 		//$('footer').animate({"bottom":0}, 500);
-		$('header').animate({"top":0}, 800, function() {
-			$('#wrapper').fadeIn(800);
-			$('.brain').animate({
-				"top":0
-			},1500);
-			$('.LeftImageContainer').animate({
-				"left":0
-			},1500);
-			$('.RightImageContainer').animate({
-				"right":0
-			},2000);			
+		$('#wrapper').fadeIn(800,function(){
+			// Layout 
+			cbpFixedScrollLayout.init(function(){
+				$('.GoToIntro').click();
+				/*$('.cbp-fbcurrent').removeClass('cbp-fbcurrent');
+				$startSection.addClass('cbp-fbcurrent');*/
+			});			
 		});
 
+		$('.scene').parallax({
+		  calibrateX: true,
+		  calibrateY: true,
+		  invertX: false,
+		  invertY: true,
+		  limitX: false,
+		  limitY: false,
+		  scalarX: 15,
+		  scalarY: 0
+		});
 	});
+
+
+/*	$(document).on('sectionChanged',function(e){
+		
+	});
+	$('.folio a').on('click',function(e){
+		e.preventDefault();	
+	});*/
+	Portfolio.init(); 
+
+});
+$(document).ready(function(){
+	 $('.entry ul li').each(function(){
+	 	var nbOfItem = $(this).parent().find('li').length;
+		$(this).css('height',($('.entry').height()/nbOfItem))
+	 })
+	 $('.entry').hover(function(){
+	   var li = $('li', this);
+	   
+	   for(var i = 0; i < $(li).length; i++){
+	     $($(li)[i]).stop().animate({
+	     'width':'18px'
+	   }, 300 + (i * 150));
+	   }
+	 }, function(){
+	   $('li', this).stop().animate({
+	     'width':'5px'
+	   }, 250);
+	 });
+  
+  
 });
 <!-- End of jPreLoader script -->
 
-function splashRotator(){
 
-}
-/* 
-* Function to animate leaving a page
-*/
-$.fn.leavePage = function() { 	
-  	
-	this.click(function(event){
-
-		// Don't go to the next page yet.
-		event.preventDefault();
-		linkLocation = this.href;
-		
-		// Fade out this page first.
-		$('body').fadeOut(500, function(){
-			
-			// Then go to the next page.
-			window.location = linkLocation;
-		});      
-	}); 
-};
-
-
-/* 
-* Call the leavePage function upon link clicks with the "transition" class
-*/
-$('.transition').leavePage();
 </script>
 
 </body>

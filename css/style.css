@@ -9,6 +9,8 @@ html, body,
 html
 {
 	background: #000000;
+	overflow-x: hidden;
+	overflow-y: scroll;
 }
 body{
 	padding:0;
@@ -19,19 +21,11 @@ body{
 header, section, footer{
 	display:block;
 }
-header{
-	width:100%;
-	background-color:#3c3c3c;
-	color:#ccc;
-	padding:15px 0;
-	font-family:Arial Narrow, Arial, sans-serif;
-	letter-spacing:1px;
-	position: relative;
-	z-index: 5;
-}
+
 hgroup{
 	margin:0 auto;
 }
+
 
 #wrapper{
 
@@ -42,9 +36,17 @@ hgroup{
 }
 
 #wrapper img, #wrapper li div{
-	width:200px;
-	height:133px;
 }
+
+.textHolder
+{
+	background: URL(img/home/logo.png) no-repeat top right;
+	position: absolute;
+	right: 0px;
+	height: 350px;
+	width: 270px;
+}
+
 .Intro
 {
 	background:url(img/home/bgWrapperBlocIntro.png) repeat;	
@@ -55,28 +57,62 @@ hgroup{
 	filter:progid:DXImageTransform.Microsoft.Shadow(color=#656565, Direction=90, Strength=20);
 }
 .LeftImageContainer{
-	background:url(img/home/bgBlocCreative.png) no-repeat left bottom;
-	height: 100%;
-	width: 100%;
+	background: url(img/home/bgBlocCreative.png) no-repeat left bottom;
+	height: 729px;
+	width: 970px;
 	position: absolute;
 	left: -100%;
+	bottom: 10px;
+	-webkit-transition: 3s;
+	-moz-transition: 3s;
+	-ms-transition: 3s;
+	-o-transition: 3s;
+	transition: 3s;	
 }
+.cbp-fbcurrent .LeftImageContainer
+{
+	opacity: 0.8;
+	left: 0;
+}
+
 .RightImageContainer{
-	background:url(img/home/bgBlocCode.png) no-repeat right bottom;
-	height: 100%;
-	width: 100%;
+	background: url(img/home/bgBlocCode.png) no-repeat right bottom;
+	height: 520px;
+	width: 522px;
 	float: right;
 	position: absolute;
 	right: -100%;
+	bottom: 10px;
+	-webkit-transition: 3s;
+	-moz-transition: 3s;
+	-ms-transition: 3s;
+	-o-transition: 3s;
+	transition: 3s;	
 }
+.cbp-fbcurrent .RightImageContainer
+{
+
+	right: 0;
+}
+
 .brain
 {
-	background:url(img/home/brain.png) no-repeat center center;
-	width:625px;
-	height: 400px;
+	margin-left: -302px;
+	left: 50%;
 	position: absolute;
-	right: 0;
-	top: -100%;
+	background:url(img/home/brain2.png) no-repeat center center;
+	width: 604px;
+	height: 400px;
+	top: -500px;
+	-webkit-transition: 3s;
+	-moz-transition: 3s;
+	-ms-transition: 3s;
+	-o-transition: 3s;
+	transition: 3s;	
+}
+.cbp-fbcurrent .brain
+{
+	top: 0;
 }
 .brain ul
 {
@@ -91,13 +127,16 @@ hgroup{
 	font-family: Tauri;
 	float: left;
 	font-size: 45px;
-	margin-top: 20px;
+	margin-top: 276px;
+	opacity: 0.3;
+	margin-left: 8px;
 }
 .textHolder h2 small{
 	font-family: Tauri;
 	display: block;
-	font-size: 22.5px;
-	margin-top: 10px;
+	font-size: 22px;
+	margin-left: 5px;
+	margin-top: 3px;
 	color: #000;
 }
 .brain ul.leftSide
@@ -108,11 +147,420 @@ hgroup{
 {
 	float: right;
 }
+.competance
+{
+	background: url(img/home/competance.png) no-repeat top left;
+	position: absolute;
+	width: 375px;
+	height: 210px;
+	left: 482px;
+	bottom: 335px;
+	opacity: 1;
+}
 .Serment
 {
-	background:url(img/home/bgWrapperBlocSerment.png) repeat;	
+	/* background:url(img/patterns/tiles.png) repeat #7dacb3; */
+	background:url(img/home/bgWrapperBlocIntro.png) repeat;
 }
 
+.slidingColor
+{
+	background: #4b8fa2;
+	opacity: 0.2;
+	height: 0px;
+	width: 100%;
+	position: absolute;
+	-webkit-transition: 3s;
+	-moz-transition: 3s;
+	-ms-transition: 3s;
+	-o-transition: 3s;
+	transition: 3s;	
+}
+
+.cbp-fbcurrent .slidingColor
+{
+	height: 240px;	
+}
+
+.oldPaper
+{
+	position: absolute;
+	background: url(img/poster/old_paper2.png) no-repeat top left;
+	width: 500px;
+	height: 785px;
+	z-index: 1;
+	left: 50%;
+	margin-left: -250px;
+	margin-top: 25px; 
+}
+.poster
+{
+	background: #ebe8e2;
+	position: relative;
+	display: block;
+	width: 500px;
+	height: 785px;
+	margin: 0 auto;
+	margin-top: 25px;
+	-moz-box-shadow: 5px 5px 5px 2px rgba(0,0,0,0.3);
+	-webkit-box-shadow: 5px 5px 5px 2px rgba(0,0,0,0.3);
+	-o-box-shadow: 5px 5px 5px 2px rgba(0,0,0,0.3);
+	box-shadow: 5px 5px 5px 2px rgba(0,0,0,0.3);
+}
+.posterContent
+{
+	background:url(img/home/bgWrapperBlocSerment.png) repeat right bottom transparent;
+	display: block;
+	position: absolute;
+	width: 90%;
+	height: 90%;
+	margin: 5%;
+	-moz-box-shadow: inset 0px 0px 2px 0px rgba(0,0,0,0.2);
+	-webkit-box-shadow: inset 0px 0px 2px 0px rgba(0,0,0,0.2);
+	-o-box-shadow: inset 0px 0px 2px 0px rgba(0,0,0,0.2);
+	box-shadow: inset 0px 0px 2px 0px rgba(0,0,0,0.2);
+	overflow: hidden;
+}
+.wave
+{
+	/*background:url(img/poster/wave.png) no-repeat bottom;*/
+	opacity: 0;
+	width: 100%;
+	height: 100%;
+	position: relative;	
+	margin-top: 250px;
+	-webkit-transition: 3s;
+	-moz-transition: 3s;
+	-ms-transition: 3s;
+	-o-transition: 3s;
+	transition: 3s;	
+}
+.cbp-fbcurrent .wave
+{
+	opacity: 1;
+	margin-top: 0px;	
+}
+.wave .element-1
+{
+	background:url(img/poster/element-1.png) no-repeat bottom right;
+	width: 105% !important;
+}
+.wave .element-2
+{
+	background:url(img/poster/element-2.png) no-repeat 4px bottom ;
+	width: 105% !important;
+}
+.wave .element-3
+{
+	background:url(img/poster/element-3.png) no-repeat 66px bottom ;
+	width: 105% !important;
+}
+.wave .element-4
+{
+	background:url(img/poster/element-4.png) no-repeat -0px bottom ;
+	width: 120% !important;
+	left: -5% !important;
+} 
+.wave .element-9
+{
+	background:url(img/poster/element-9.png) no-repeat -25px 482px ;
+	width: 105% !important;
+	z-index: 1;
+}
+.wave .element-8
+{
+	background:url(img/poster/element-8.png) no-repeat -32px 482px ;
+	width: 105% !important;
+}
+
+.clouds
+{
+	width: 100%;
+	height: 100%;
+	position: absolute;	
+}
+.cloudContent
+{
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+.clouds .elements
+{
+	position: absolute;
+}
+
+.clouds .element-1
+{
+	background:url(img/poster/clouds/element-1.png) no-repeat top left;
+	width: 105% !important;
+}
+.clouds .element-2
+{
+	background:url(img/poster/clouds/element-2.png) no-repeat top left ;
+	width: 143px;
+	height: 152px;
+	top: -30px;
+	left: -180px;
+
+    -webkit-animation-duration: 55s;
+    -webkit-animation-delay: 0s;
+    -webkit-animation-iteration-count: infinite;
+    -moz-animation-duration: 40s;
+    -moz-animation-delay: 0s;
+    -moz-animation-iteration-count: infinite;
+}
+.clouds .element-3
+{
+	background: url(img/poster/clouds/element-3.png) no-repeat top left;
+	width: 165px;
+	height: 301px;
+	top: -20px;
+	right: -180px;
+
+    -webkit-animation-duration: 40s;
+    -webkit-animation-delay: 0s;
+    -webkit-animation-iteration-count: infinite;
+    -moz-animation-duration: 40s;
+    -moz-animation-delay: 0s;
+    -moz-animation-iteration-count: infinite;
+}
+.clouds .element-4
+{
+	background:url(img/poster/clouds/element-4.png) no-repeat top left ;
+	width: 132px;
+	height: 201px;
+	top: -30px;
+	right: -140px;
+
+    -webkit-animation-duration: 25s;
+    -webkit-animation-delay: 0s;
+    -webkit-animation-iteration-count: infinite;
+    -moz-animation-duration: 25s;
+    -moz-animation-delay: 0s;
+    -moz-animation-iteration-count: infinite;
+}
+.clouds .element-5
+{
+	background:url(img/poster/clouds/element-5.png) no-repeat top left;
+	width: 108px;
+	height: 263px;
+	top: -30px;
+	left: -108px;
+
+    -webkit-animation-duration: 50s;
+    -webkit-animation-delay: 0s;
+    -webkit-animation-iteration-count: infinite;
+    -moz-animation-duration: 50s;
+    -moz-animation-delay: 0s;
+    -moz-animation-iteration-count: infinite;
+}
+.clouds .element-6
+{
+	background: url(img/poster/clouds/element-6.png) no-repeat top left;
+	width: 148px;
+	height: 246px;
+	top: 0;
+	left: -150px;
+
+    -webkit-animation-duration: 30s;
+    -webkit-animation-delay: 0s;
+    -webkit-animation-iteration-count: infinite;
+    -moz-animation-duration: 30s;
+    -moz-animation-delay: 0s;
+    -moz-animation-iteration-count: infinite;
+}
+.clouds .element-7 {
+	background: url(img/poster/clouds/element-7.png) no-repeat top left;
+	width: 272px;
+	height: 141px;
+	top: 0;
+	right: -300px;
+
+	-webkit-animation-duration: 35s;
+	-webkit-animation-delay: 0s;
+	-webkit-animation-iteration-count: infinite;
+	-moz-animation-duration: 35s;
+	-moz-animation-delay: 0s;
+	-moz-animation-iteration-count: infinite;
+
+}
+
+.decoration
+{
+	background: url(img/poster/decoration.png) no-repeat -50px -50px;
+	position: absolute;
+	width: 100%;
+	height: 100%;	
+}
+.SermentHolder
+{
+	background:url(img/home/bgContentSerment.png) no-repeat right bottom transparent;
+		
+}
+.sun
+{
+	background: url(img/poster/soleil.png) no-repeat -50px -50px;
+	position: absolute;
+	opacity: 0;
+	width: 328px;
+	height: 336px;
+	left: -328px;
+	top: -336px;
+	-webkit-transition: 3s;
+	-moz-transition: 3s;
+	-ms-transition: 3s;
+	-o-transition: 3s;
+	transition: 3s;	
+}
+.cbp-fbcurrent .sun
+{
+	opacity: 1;
+	left: -50px;
+	top: -50px;	
+}
+.fist
+{
+	background: url(img/poster/Fist.png) no-repeat top left transparent;
+	opacity: 0;
+	position: absolute;
+	z-index: inherit;
+	width: 298px;
+	height: 461px;
+	right: -298px;
+	bottom: -461px;	
+	-webkit-transition: 3s;
+	-moz-transition: 3s;
+	-ms-transition: 3s;
+	-o-transition: 3s;
+	transition: 3s;	
+}
+.cbp-fbcurrent .fist
+{
+	opacity: 1;
+	right: 0;
+	bottom: -30px;
+}
+.sermentContent
+{
+	height: 100%;
+	background: url(img/home/bgSerment.png) no-repeat 120px 40% transparent;
+	padding: 100px 0;
+	display: block;
+	font-family: 'Roboto Slab', serif;
+}
+.sermentContent h2
+{
+	text-align: right;
+	font-size: 48px;
+	font-family: 'Roboto Slab', serif;
+	font-weight: 300;
+	color:#504223;
+}
+.sermentContent p
+{
+	font-size: 28px;
+	font-family: 'Roboto Slab', serif;	
+	font-weight: 300;
+	color:#504223;
+}
+
+.sermentText
+{
+	color: #959595;
+	font-size: 22px;
+	font-family: 'Roboto Slab', serif;
+	/*text-align: justify;*/
+	padding-top: 130px;
+}
+.sermentText footer
+{
+	text-align: right;
+}
+.sermentText p.text::first-letter {
+  font-weight: bold;
+  font-size: 45px;
+}
+.sermentText h2 
+{
+	font-size: 80px;
+	font-weight: 900;
+	color: #ebebeb;
+	-webkit-transition-delay: 3s;
+	-moz-transition-delay: 3s;
+	-ms-transition-delay: 3s;
+	-o-transition-delay: 3s;
+	transition-delay: 3s; 
+
+	-webkit-transition: 3s;
+	-moz-transition: 3s;
+	-ms-transition: 3s;
+	-o-transition: 3s;
+	transition: 3s;	
+}
+.cbp-fbcurrent .sermentText h2 
+{
+	text-shadow: -5px -4px 2px #b2b1b1; 	
+}
+.sermentText h2::first-letter {
+  font-size: 100px;
+}
+
+
+.Portfolio
+{
+	/* background:url(img/patterns/tiles.png) repeat #7dacb3; */
+	background:url(img/home/bgWrapperBlocIntro.png) repeat;
+}
+.Portfolio.cbp-fbcurrent .container
+{	
+	opacity: 0;
+}
+.Portfolio.cbp-fbcurrent .container
+{
+	opacity: 1;
+	background:url(img/portfolio/tree.png) no-repeat bottom right;
+}
+.Portfolio .slidingColor
+{
+	background: #A5B17E;	
+}
+.Portfolio.cbp-fbcurrent .slidingColor
+{
+	height: 150px;	
+}
+.Portfolio .portfolioText
+{
+	color: #959595;
+	font-size: 22px;
+	font-family: 'Roboto Slab', serif;
+	/*text-align: justify;*/
+	padding-top: 39px;
+}
+.Portfolio .portfolioText h2 
+{
+	font-size: 80px;
+	font-weight: 900;
+	color: #ebebeb;
+	-webkit-transition-delay: 3s;
+	-moz-transition-delay: 3s;
+	-ms-transition-delay: 3s;
+	-o-transition-delay: 3s;
+	transition-delay: 3s; 
+
+	-webkit-transition: 3s;
+	-moz-transition: 3s;
+	-ms-transition: 3s;
+	-o-transition: 3s;
+	transition: 3s;	
+}
+.Portfolio.cbp-fbcurrent .portfolioText h2 
+{
+	text-shadow: -5px -4px 2px #b2b1b1; 	
+}
+.Portfolio .portfolioText h2::first-letter {
+  font-size: 100px;
+}
 
 #jSplash{
 	width: 100%;
@@ -124,6 +572,7 @@ hgroup{
 #jSplash h2{
 	line-height:175%;
 }
+
 /*
 footer{
 	background-color:rgb(0, 0, 0);
@@ -145,42 +594,54 @@ footer a{
 	clear:both;
 }
 
+.goTotop
+{
+	background: rgba(0,0,0,0.2);
+	position: fixed;
+	z-index: 10000;
+	right: 0;
+	bottom: 0;
+	width: 47px;
+	-webkit-transform: translateY(-50%);
+	-moz-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);	
+}
 /*= CSS layout
 -------------------------*/
 
 /* The nav is fixed on the right side  and we center it by translating it 50% 
 (we don't know it's height so we can't use the negative margin trick) */
 .cbp-fbscroller > nav {
+	background: rgba(0,0,0,0.2);
 	position: fixed;
 	z-index: 9999;
-	right: 0px;
+	right: 0;
 	top: 50%;
-	width: 26px;
+	width: 47px;
+	height: 100%;
 	-webkit-transform: translateY(-50%);
 	-moz-transform: translateY(-50%);
 	-ms-transform: translateY(-50%);
 	transform: translateY(-50%);
 }
-
-.cbp-fbscroller > nav a {
+.cbp-fbscroller > nav a
+ {
 	display: block;
 	position: relative;
 	z-index: 9999;
 	color: transparent;
-	width: 26px;
-	height: 26px;
+	width: 100%;
 	outline: none;
-	margin: 25px 0;
-	border: 4px solid #fff;
+	margin: 15px 0;
+	padding:10%;
 }
 
-.no-touch .cbp-fbscroller > nav a:hover {
+.no-touch .cbp-fbscroller > nav a:hover
+{
 	background: rgba(255,255,255,0.6);
 }
 
-.cbp-fbscroller > nav a.cbp-fbcurrent {
-	background: #fff;
-}
 
 /* background-attachment does the trick */
 .cbp-fbscroller section {
@@ -192,4 +653,69 @@ footer a{
 
 /**/
 
+
+.arrow {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  margin-left:-20px;
+  opacity: 0.1;
+}
+
+.bounce {
+	-webkit-animation-name: bounce;
+	-moz-animation-name: bounce;
+	-o-animation-name: bounce;
+	animation-name: bounce;
+}
+.animated{-webkit-animation-fill-mode:both;
+-moz-animation-fill-mode:both;
+-ms-animation-fill-mode:both;
+-o-animation-fill-mode:both;
+
+            animation-iteration-count: infinite;
+       -moz-animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite;
+
+animation-fill-mode:both;
+-webkit-animation-duration:5s;
+-moz-animation-duration:5s;
+-ms-animation-duration:5s;
+-o-animation-duration:5s;
+animation-duration:5s;
+}
+
+
+@-webkit-keyframes bounce {
+	0%, 20%, 50%, 80%, 100% {-webkit-transform: translateY(0);}	40% {-webkit-transform: translateY(-30px);}
+	60% {-webkit-transform: translateY(-15px);}
+}
+
+@-moz-keyframes bounce {
+	0%, 20%, 50%, 80%, 100% {-moz-transform: translateY(0);}
+	40% {-moz-transform: translateY(-30px);}
+	60% {-moz-transform: translateY(-15px);}
+}
+
+@-o-keyframes bounce {
+	0%, 20%, 50%, 80%, 100% {-o-transform: translateY(0);}
+	40% {-o-transform: translateY(-30px);}
+	60% {-o-transform: translateY(-15px);}
+}
+@keyframes bounce {
+	0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+	40% {transform: translateY(-30px);}
+	60% {transform: tr
+
+@keyframes fistUp {
+  from {
+	right: -298px;
+	bottom: -461px;	
+  }
+
+  to {
+	right: 0;
+	bottom: -30px;
+  }
+}
 

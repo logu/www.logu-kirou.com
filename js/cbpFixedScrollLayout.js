@@ -15,7 +15,7 @@ var cbpFixedScrollLayout = (function() {
 		// the cbp-fbscroller's sections
 		$sections : $( '#cbp-fbscroller > section' ),
 		// the navigation links
-		$navlinks : $( '#cbp-fbscroller > nav:first > a' ),
+		$navlinks : $( 'nav.interne > a' ),
 		// index of current link / section
 		currentLink : 0,
 		// the body element
@@ -26,11 +26,14 @@ var cbpFixedScrollLayout = (function() {
 		animeasing : 'easeInOutExpo'
 	};
 
-	function init() {
+	function init(callback) {
 
 		// click on a navigation link: the body is scrolled to the position of the respective section
 		config.$navlinks.on( 'click', function() {
-			scrollAnim( config.$sections.eq( $( this ).index() ).offset().top );
+			var $section = $($(this).attr("href")) 
+			changeNav($section);
+			scrollAnim( config.$sections.eq( $( this ).index()).offset().top );
+			//TODO : Trigger event on the section load
 			return false;
 		} );
 
@@ -47,14 +50,22 @@ var cbpFixedScrollLayout = (function() {
 		$( window ).on( 'debouncedresize', function() {
 			scrollAnim( config.$sections.eq( config.currentLink ).offset().top );
 		} );
-		
+		if($.isFunction(callback)){
+			callback();
+		};
 	}
 
 	// update the current navigation link
 	function changeNav( $section ) {
-		config.$navlinks.eq( config.currentLink ).removeClass( 'cbp-fbcurrent' );
-		config.currentLink = $section.index( 'section' );
-		config.$navlinks.eq( config.currentLink ).addClass( 'cbp-fbcurrent' );
+		$.event.trigger({
+			type: "sectionChanged",
+			elements: {
+				changed : $('.cbp-fbcurrent'),
+				selected : $section,
+			}
+		});
+		$('.cbp-fbcurrent').removeClass('cbp-fbcurrent');
+		$section.addClass('cbp-fbcurrent');
 	}
 
 	// function to scroll / animate the body
